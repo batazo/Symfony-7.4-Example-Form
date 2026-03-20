@@ -1,0 +1,14 @@
+<IfModule mod_negotiation.c>
+    Options -MultiViews
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Ha a fájl vagy könyvtár létezik, akkor azt szolgáljuk ki
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Minden más megy az index.php-re
+    RewriteRule ^ index.php [L]
+</IfModule>

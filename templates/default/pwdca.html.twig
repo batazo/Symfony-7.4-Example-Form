@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Jelszó csere{% endblock %}
+
+{% block body %}
+    <h1>Jelszó csere</h1>
+
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+    {{ form_start(changePasswordForm) }}
+    {{ form_row(changePasswordForm.currentPassword) }}
+    {{ form_row(changePasswordForm.plainPassword.first) }}
+    {{ form_row(changePasswordForm.plainPassword.second) }}
+
+    <button class="btn btn-primary">Jelszó módosítása</button>
+    {{ form_end(changePasswordForm) }}
+{% endblock %}

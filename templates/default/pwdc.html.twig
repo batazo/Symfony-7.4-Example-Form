@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Jelszó csere{% endblock %}
+
+{% block body %}
+    <!-- Jelszó módosítása -->
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Jelszó módosítása</h5>
+            </div>
+            <div class="card-body">
+                {{ form_start(passwordForm) }}
+                <div class="mb-3">
+                    {{ form_row(passwordForm.currentPassword) }}
+                </div>
+                <div class="mb-3">
+                    {{ form_row(passwordForm.newPassword) }}
+                </div>
+                <div class="mb-3">
+                    {{ form_row(passwordForm.confirmPassword) }}
+                </div>
+                <button class="btn btn-warning mb-2" type="submit">Jelszó módosítása</button>
+                {{ form_end(passwordForm) }}
+
+                {# Jelszó flash #}
+                {% for message in app.flashes('password_success') %}
+                    <div class="alert alert-success">{{ message }}</div>
+                {% endfor %}
+
+                {% for message in app.flashes('password_error') %}
+                    <div class="alert alert-danger">{{ message }}</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
