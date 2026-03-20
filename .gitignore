@@ -1,0 +1,59 @@
+### Symfony ###
+/var/
+/vendor/
+/public/bundles/
+/public/build/
+
+### Env fájlok (ne kerüljenek fel!) ###
+.env
+.env.local
+.env.*.local
+
+### Config local override ###
+config/packages/*.local.yaml
+config/packages/*/*.local.yaml
+config/services_local.yaml
+
+### Composer ###
+composer.phar
+
+### PHP ###
+*.log
+*.cache
+*.class
+.phpunit.result.cache
+
+### PHPUnit ###
+/phpunit.xml
+/phpunit.xml.dist
+
+### Node / frontend ###
+/node_modules/
+/npm-debug.log
+/yarn-error.log
+/public/build/
+/public/hot
+
+### IDE ###
+/.idea/
+/.vscode/
+*.swp
+*.swo
+
+### OS ###
+.DS_Store
+Thumbs.db
+
+### Logs ###
+/var/log/
+/var/cache/
+
+### Uploads (ha van ilyen mappád) ###
+/public/uploads/
+
+### Docker (ha van) ###
+docker-compose.override.yml
+
+### Misc ###
+*.bak
+*.tmp
