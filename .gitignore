@@ -6,6 +6,7 @@
 
 ### Env fájlok (ne kerüljenek fel!) ###
 .env
+.env.dev
 .env.local
 .env.*.local
 
